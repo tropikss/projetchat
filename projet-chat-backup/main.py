@@ -1,6 +1,7 @@
 
 import time
 import grovepi
+import openCV
 
 import driver_ultrasonic as ultrasonic
 import driver_led as led
@@ -75,6 +76,8 @@ def shoot():
 	picam.shoot(nom)
 	time.sleep(1)
 
+	return(nom)
+
 def shoot_upload():
 
 	date_heure_actuelles = datetime.now()
@@ -119,9 +122,22 @@ def moyUltrasonic():
 	print(str(ultrasonicTab)+" - "+str(moy(ultrasonicTab))+" - "+str(ultrasonic.getValue()))
 	return moy(ultrasonicTab)
 
+n = 10
+tab = [""] * n
+
 while True: 
-	moyUltrasonic()
-	time.sleep(0.1)
+
+	global u
+
+	if(i >= n):
+		i = 0
+	
+	tab[i] = shoot()
+	if(openCV.mouvement(tab[i-1], tab[i])):
+		print("mouvement")
+	else:
+		print("rien")
+	time.sleep(1)
 
 
 """for i in range(10):
