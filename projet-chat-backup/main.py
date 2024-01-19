@@ -52,9 +52,10 @@ def delete(chemin_fichier):
 import os
 
 def deleteAll():
+	repertoire = "photo/"
     try:
         # Liste de tous les fichiers dans le répertoire
-        fichiers = os.listdir("photo/")
+        fichiers = os.listdir(repertoire)
 
         # Parcourir la liste et supprimer chaque fichier
         for fichier in fichiers:
