@@ -64,7 +64,7 @@ def uploadAll(directory_path):
 				# Appelle la fonction pour traiter le fichier
 				drive.upload(file_path)
 				delete(file_path)
-				
+
 	except Exception as e:
 		print(f"Une erreur s'est produite : {e}")
 
@@ -73,7 +73,7 @@ def shoot():
 	nom = date_heure_actuelles.strftime("%Y-%m-%d %H:%M:%S")
 
 	picam.shoot(nom)
-	time.sleep(1)
+	time.sleep(0.05)
 
 def shoot_upload():
 
@@ -89,9 +89,9 @@ def shoot_upload():
 
 	message(done, "Upload termine")
 
-for i in range(10):
+"""for i in range(2):
 	shoot()
-uploadAll("photo/")
+uploadAll("photo/")"""
 
 """lcd.background()
 displayed = False
