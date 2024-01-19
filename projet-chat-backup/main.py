@@ -53,20 +53,20 @@ import os
 
 def deleteAll():
 	repertoire = "photo/"
-    try:
-        # Liste de tous les fichiers dans le répertoire
-        fichiers = os.listdir(repertoire)
+	try:
+		# Liste de tous les fichiers dans le répertoire
+		fichiers = os.listdir(repertoire)
 
-        # Parcourir la liste et supprimer chaque fichier
-        for fichier in fichiers:
-            chemin_fichier = os.path.join(repertoire, fichier)
-            if os.path.isfile(chemin_fichier):
-                os.remove(chemin_fichier)
-                print(f"Fichier supprimé : {fichier}")
+		# Parcourir la liste et supprimer chaque fichier
+		for fichier in fichiers:
+			chemin_fichier = os.path.join(repertoire, fichier)
+			if os.path.isfile(chemin_fichier):
+				os.remove(chemin_fichier)
+				print(f"Fichier supprimé : {fichier}")
 
-        print("Tous les fichiers ont été supprimés avec succès.")
-    except Exception as e:
-        print(f"Une erreur s'est produite : {e}")
+		print("Tous les fichiers ont été supprimés avec succès.")
+	except Exception as e:
+		print(f"Une erreur s'est produite : {e}")
 
 def uploadAll(directory_path):
 	try:
