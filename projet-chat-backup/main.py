@@ -132,7 +132,7 @@ shoot()
 shoot()
 shoot()
 
-uploadAll()
+uploadAll("photo/")
 
 """while True: 
 
