@@ -42,7 +42,7 @@ def delete(chemin_fichier):
         if os.path.exists(chemin_fichier):
             # Supprime le fichier
             os.remove(chemin_fichier)
-            print(f"Le fichier {chemin_fichier} a été supprimé avec succès.")
+            print(f"deleted : {chemin_fichier}")
         else:
             print(f"Le fichier {chemin_fichier} n'existe pas.")
     except Exception as e:
@@ -89,9 +89,29 @@ def shoot_upload():
 
 	message(done, "Upload termine")
 
-for i in range(10):
+distance = 100
+n = 10
+i = 0
+
+ultrasonicTab = [distance] * n
+
+def moyUltrasonic():
+	if(not i < 10):
+		i = 0
+	v = ultrasonic.getValue()
+	ultrasonicTab[i] = v
+	i += 1
+
+	print(ultrasonicTab)
+
+while True: 
+	moyUltrasonic()
+	time.sleep(0.5)
+
+
+"""for i in range(10):
 	shoot()
-uploadAll("photo/")
+uploadAll("photo/")"""
 
 """lcd.background()
 displayed = False
