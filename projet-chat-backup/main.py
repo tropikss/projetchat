@@ -105,6 +105,8 @@ def compare(repertoire):
 		print("p2 : "+str(p2))
 
 		global last
+		if(last == None):
+			last = p1
 
 		if(openCV.mouvement(p1, p2)) :
 			
@@ -120,9 +122,6 @@ def compare(repertoire):
 		elif(p2 == last):
 			delete(last)
 			last = p1
-		else:
-			delete(p1)
-			last = p2
 
 	elif(len(fichiers) < 2):
 		print("Pas assez de fichier")
