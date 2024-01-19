@@ -86,8 +86,10 @@ def compare(repertoire):
 
 		if(openCV.mouvement(p1, p2)) :
 			
-			print("MOUVEMENT")
+			print("                                     MOUVEMENT")
 			delete(p1)
+		else :
+			print("                                     AUCUN MOUVEMENT")
 
 	else:
 		print("Pas assez de fichier")
