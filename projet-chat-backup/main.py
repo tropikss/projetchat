@@ -125,10 +125,14 @@ def moyUltrasonic():
 n = 10
 tab = [""] * n
 
-shoot_upload()
-shoot_upload()
-shoot_upload()
-shoot_upload()
+shoot()
+shoot()
+
+shoot()
+shoot()
+shoot()
+
+uploadAll()
 
 """while True: 
 
