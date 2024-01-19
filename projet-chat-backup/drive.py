@@ -93,6 +93,7 @@ def upload(nom):
   try:
     service = build("drive", "v3", credentials=creds)
     ###############################################
+    print("uploading : "+str(nom))
     file_metadata = {"name": nom+".jpg", "parents": ["1MTO_NDmajVMD77BEUm-mr0LmrZG9bAmt"]}
     media = MediaFileUpload(store+nom+".jpg", mimetype="image/jpg", resumable=True)
     # pylint: disable=maybe-no-member
@@ -101,7 +102,7 @@ def upload(nom):
         .create(body=file_metadata, media_body=media, fields="id")
         .execute()
     )
-    print(f'File ID: {file.get("id")}')
+    print(f'done    -     File ID: {file.get("id")}')
     ####################################################
     
   except HttpError as error:

@@ -32,6 +32,28 @@ def message(type, message):
 	lcd.setRGB(type)
 	lcd.setText(message)
 
+def uploadAll(directory_path):
+    try:
+        # Obtient la liste de fichiers dans le répertoire
+        files = os.listdir(directory_path)
+
+        # Parcourt tous les fichiers dans le répertoire
+        for file_name in files:
+            # Construit le chemin complet du fichier
+            file_path = os.path.join(directory_path, file_name)
+
+            # Vérifie si le chemin correspond à un fichier
+            if os.path.isfile(file_path):
+                # Appelle la fonction pour traiter le fichier
+                drive.upload(file_path)
+
+def shoot():
+	date_heure_actuelles = datetime.now()
+	nom = date_heure_actuelles.strftime("%Y-%m-%d %H:%M:%S")
+
+	picam.shoot(nom)
+	time.sleep(1)
+
 def shoot_upload():
 
 	date_heure_actuelles = datetime.now()
@@ -46,7 +68,9 @@ def shoot_upload():
 
 	message(done, "Upload termine")
 
-shoot_upload()
+for i in range(10):
+	shoot()
+uploadAll()
 
 """lcd.background()
 displayed = False
