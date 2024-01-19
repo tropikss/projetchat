@@ -72,7 +72,7 @@ def shoot_upload():
 
 for i in range(10):
 	shoot()
-uploadAll()
+uploadAll("photo/")
 
 """lcd.background()
 displayed = False
