@@ -111,13 +111,14 @@ def compare(repertoire):
 		if(openCV.mouvement(p1, p2)) :
 			
 			print("                                     MOUVEMENT")
-			
+			led.on()
 			if(p1 == last):
 				drive.upload(p2)
 			else :
 				drive.upload(p1)
 		
 		else :
+			led.off()
 			print("                                     AUCUN MOUVEMENT")
 		
 		if(p1 == last):
