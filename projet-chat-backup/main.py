@@ -133,7 +133,7 @@ while True:
 		i = 0
 	
 	tab[i] = shoot()
-	if(tab[i+1] != ""):
+	if(tab[i-1] != ""):
 		if(openCV.mouvement(tab[i-1], tab[i])):
 			print("mouvement")
 		else:
