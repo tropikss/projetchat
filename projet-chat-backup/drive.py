@@ -95,7 +95,7 @@ def upload(nom):
     ###############################################
     print("uploading : "+str(nom))
     file_metadata = {"name": nom, "parents": ["1MTO_NDmajVMD77BEUm-mr0LmrZG9bAmt"]}
-    media = MediaFileUpload(store+nom, mimetype="image/jpg", resumable=True)
+    media = MediaFileUpload(nom, mimetype="image/jpg", resumable=True)
     # pylint: disable=maybe-no-member
     file = (
         service.files()
