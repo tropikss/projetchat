@@ -96,7 +96,7 @@ i = 0
 ultrasonicTab = [distance] * n
 
 def moyUltrasonic():
-	if(not i < 10):
+	if(not (i < 10)):
 		i = 0
 	v = ultrasonic.getValue()
 	ultrasonicTab[i] = v
