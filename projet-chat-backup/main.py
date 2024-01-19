@@ -134,7 +134,7 @@ shoot()
 
 uploadAll("photo/")
 
-"""while True: 
+while True: 
 
 	global u
 
@@ -148,7 +148,7 @@ uploadAll("photo/")
 		else:
 			print("rien")
 	i += 1
-	time.sleep(1)"""
+	time.sleep(1)
 
 
 """for i in range(10):
