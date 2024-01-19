@@ -111,7 +111,7 @@ def compare(repertoire):
 		if(openCV.mouvement(p1, p2)) :
 			
 			print("                                     MOUVEMENT")
-			upload(p2)
+			drive.upload(p2)
 		
 		else :
 			print("                                     AUCUN MOUVEMENT")
