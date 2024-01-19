@@ -69,6 +69,25 @@ def uploadAll(directory_path):
 	except Exception as e:
 		print(f"Une erreur s'est produite : {e}")
 
+def compare(repertoire):
+	# Liste des fichiers dans le répertoire
+	fichiers = os.listdir(repertoire)
+
+	# Filtrer les fichiers pour ne conserver que les fichiers (pas les répertoires)
+	fichiers = [fichier for fichier in fichiers if os.path.isfile(os.path.join(repertoire, fichier))]
+
+	# Vérifier s'il y a au moins deux fichiers
+	if len(fichiers) >= 2:
+		# Récupérer les deux premiers fichiers
+		p1, p2 = os.path.join(repertoire, fichiers[0]), os.path.join(repertoire, fichiers[1])
+
+		if(openCV.mouvement(p1, p2)) :
+			print("MOUVEMENT")
+			delete(p1)
+
+	else:
+		print("Pas assez de fichier")
+
 def shoot():
 	date_heure_actuelles = datetime.now()
 	nom = date_heure_actuelles.strftime("%Y-%m-%d %H:%M:%S")
@@ -125,29 +144,9 @@ def moyUltrasonic():
 n = 10
 tab = [""] * n
 
-shoot()
-shoot()
-
-shoot()
-shoot()
-shoot()
-
-uploadAll("photo/")
-
 while True: 
-
-	global u
-
-	if(i >= n):
-		i = 0
-	
-	tab[i] = shoot()
-	if(tab[i-1] != ""):
-		if(openCV.mouvement(tab[i-1], tab[i])):
-			print("mouvement")
-		else:
-			print("rien")
-	i += 1
+	shoot()
+	compare("photo/")
 	time.sleep(1)
 
 
