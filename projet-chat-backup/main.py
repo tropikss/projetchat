@@ -91,22 +91,37 @@ def shoot_upload():
 
 distance = 100
 n = 10
-i = 0
 
 ultrasonicTab = [distance] * n
 
+i = 0
+
+def moy(tab):
+	res = 0
+	for i in range(len(tab)-1):
+		res += tab[i]
+	return int(res/(len(tab)-1))
+
 def moyUltrasonic():
+
+	global i
+
+	u = ultrasonic.getValue()
+
 	if(i >= 10):
 		i = 0
-	v = ultrasonic.getValue()
-	ultrasonicTab[i] = v
+		u += 1
+
+	ultrasonicTab[i] = u
+
 	i += 1
 
-	print(ultrasonicTab)
+	print(moy(ultrasonicTab))
+	return moy(ultrasonicTab)
 
 while True: 
 	moyUltrasonic()
-	time.sleep(0.5)
+	time.sleep(0.1)
 
 
 """for i in range(10):
