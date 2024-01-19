@@ -153,7 +153,7 @@ tab = [""] * n
 while True: 
 	shoot()
 	compare("photo/")
-	time.sleep(1)
+	time.sleep(3)
 
 
 """for i in range(10):
