@@ -87,8 +87,6 @@ def uploadAll(directory_path):
 	except Exception as e:
 		print(f"Une erreur s'est produite : {e}")
 
-last
-
 def compare(repertoire):
 	# Liste des fichiers dans le répertoire
 	fichiers = os.listdir(repertoire)
