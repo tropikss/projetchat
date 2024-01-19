@@ -45,7 +45,9 @@ def shoot_upload():
 
 	message(done, "Upload termine")
 
-lcd.background()
+shoot_upload()
+
+"""lcd.background()
 displayed = False
 distance = 100
 
@@ -82,3 +84,4 @@ while True:
 	
 	# delai pour pas tout cramer
 	time.sleep(0.1)
+"""
