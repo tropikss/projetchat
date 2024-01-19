@@ -46,6 +46,8 @@ def uploadAll(directory_path):
             if os.path.isfile(file_path):
                 # Appelle la fonction pour traiter le fichier
                 drive.upload(file_path)
+	except Exception as e:
+        print(f"Une erreur s'est produite : {e}")
 
 def shoot():
 	date_heure_actuelles = datetime.now()
