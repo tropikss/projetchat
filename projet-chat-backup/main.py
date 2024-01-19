@@ -89,7 +89,10 @@ def uploadAll(directory_path):
 
 def compare(repertoire):
 	# Liste des fichiers dans le répertoire
-	fichiers = os.listdir(repertoire)
+	fichiers = [(fichier, os.path.getctime(os.path.join(repertoire, fichier))) for fichier in os.listdir(repertoire) if os.path.isfile(os.path.join(repertoire, fichier))]
+
+	# Tri des fichiers par date de création
+	fichiers = sorted(fichiers, key=lambda x: x[1])
 
 	# Filtrer les fichiers pour ne conserver que les fichiers (pas les répertoires)
 	fichiers = [fichier for fichier in fichiers if os.path.isfile(os.path.join(repertoire, fichier))]
