@@ -108,6 +108,7 @@ def compare(repertoire):
 			delete(p1)
 		else :
 			print("                                     AUCUN MOUVEMENT")
+			delete(p1)
 
 	elif(len(fichiers) < 2):
 		print("Pas assez de fichier")
@@ -174,7 +175,7 @@ tab = [""] * n
 while True: 
 	shoot()
 	compare("photo/")
-	time.sleep(3)
+	time.sleep(2)
 
 
 """for i in range(10):
