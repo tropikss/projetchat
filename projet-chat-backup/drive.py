@@ -94,8 +94,8 @@ def upload(nom):
     service = build("drive", "v3", credentials=creds)
     ###############################################
     print("uploading : "+str(nom))
-    file_metadata = {"name": nom+".jpg", "parents": ["1MTO_NDmajVMD77BEUm-mr0LmrZG9bAmt"]}
-    media = MediaFileUpload(store+nom+".jpg", mimetype="image/jpg", resumable=True)
+    file_metadata = {"name": nom, "parents": ["1MTO_NDmajVMD77BEUm-mr0LmrZG9bAmt"]}
+    media = MediaFileUpload(store+nom, mimetype="image/jpg", resumable=True)
     # pylint: disable=maybe-no-member
     file = (
         service.files()
