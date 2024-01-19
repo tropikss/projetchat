@@ -33,6 +33,22 @@ def message(type, message):
 	lcd.setRGB(type)
 	lcd.setText(message)
 
+def delete(chemin_fichier):
+    """
+    Supprime le fichier spécifié par le chemin_fichier.
+    """
+    try:
+        # Vérifie si le fichier existe avant de le supprimer
+        if os.path.exists(chemin_fichier):
+            # Supprime le fichier
+            os.remove(chemin_fichier)
+            print(f"Le fichier {chemin_fichier} a été supprimé avec succès.")
+        else:
+            print(f"Le fichier {chemin_fichier} n'existe pas.")
+    except Exception as e:
+        print(f"Une erreur s'est produite lors de la suppression du fichier {chemin_fichier}: {e}")
+
+
 def uploadAll(directory_path):
 	try:
 		# Obtient la liste de fichiers dans le répertoire
@@ -47,6 +63,8 @@ def uploadAll(directory_path):
 			if os.path.isfile(file_path):
 				# Appelle la fonction pour traiter le fichier
 				drive.upload(file_path)
+				delete(file_path)
+				
 	except Exception as e:
 		print(f"Une erreur s'est produite : {e}")
 

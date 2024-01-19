@@ -67,7 +67,6 @@ def main():
 
 def upload(nom):
   store = "photo/"
-  print("uploading...")
   """Shows basic usage of the Drive v3 API.
   Prints the names and ids of the first 10 files the user has access to.
   """
