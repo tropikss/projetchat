@@ -116,7 +116,7 @@ def moyUltrasonic():
 
 	i += 1
 
-	print(moy(ultrasonicTab))
+	print(str(ultrasonicTab)+" - "+str(moy(ultrasonicTab)))
 	return moy(ultrasonicTab)
 
 while True: 
