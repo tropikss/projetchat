@@ -81,9 +81,11 @@ def compare(repertoire):
 		# Récupérer les deux premiers fichiers
 		p1, p2 = os.path.join(repertoire, fichiers[0]), os.path.join(repertoire, fichiers[1])
 
+		print("p1 : "+str(p1))
+		print("p2 : "+str(p2))
+
 		if(openCV.mouvement(p1, p2)) :
-			print("p1 : "+str(p1))
-			print("p2 : "+str(p2))
+			
 			print("MOUVEMENT")
 			delete(p1)
 
