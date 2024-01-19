@@ -94,7 +94,7 @@ def compare(repertoire):
 
 def shoot():
 	date_heure_actuelles = datetime.now()
-	nom = date_heure_actuelles.strftime("%Y-%m-%d_%H:%M:%S")
+	nom = date_heure_actuelles.strftime("%H:%M:%S")
 
 	picam.shoot(nom)
 	time.sleep(1)
@@ -104,7 +104,7 @@ def shoot():
 def shoot_upload():
 
 	date_heure_actuelles = datetime.now()
-	nom = date_heure_actuelles.strftime("%Y-%m-%d_%H:%M:%S")
+	nom = date_heure_actuelles.strftime("%H:%M:%S")
 
 	message(error, "Ne bougez plus !")
 	picam.shoot(nom)
