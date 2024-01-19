@@ -73,7 +73,7 @@ def shoot():
 	nom = date_heure_actuelles.strftime("%Y-%m-%d %H:%M:%S")
 
 	picam.shoot(nom)
-	time.sleep(0.5)
+	time.sleep(1)
 
 def shoot_upload():
 
