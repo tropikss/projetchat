@@ -89,9 +89,9 @@ def shoot_upload():
 
 	message(done, "Upload termine")
 
-"""for i in range(2):
+for i in range(10):
 	shoot()
-uploadAll("photo/")"""
+uploadAll("photo/")
 
 """lcd.background()
 displayed = False
