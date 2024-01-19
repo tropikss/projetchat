@@ -33,21 +33,21 @@ def message(type, message):
 	lcd.setText(message)
 
 def uploadAll(directory_path):
-    try:
-        # Obtient la liste de fichiers dans le répertoire
-        files = os.listdir(directory_path)
+	try:
+		# Obtient la liste de fichiers dans le répertoire
+		files = os.listdir(directory_path)
 
-        # Parcourt tous les fichiers dans le répertoire
-        for file_name in files:
-            # Construit le chemin complet du fichier
-            file_path = os.path.join(directory_path, file_name)
+		# Parcourt tous les fichiers dans le répertoire
+		for file_name in files:
+			# Construit le chemin complet du fichier
+			file_path = os.path.join(directory_path, file_name)
 
-            # Vérifie si le chemin correspond à un fichier
-            if os.path.isfile(file_path):
-                # Appelle la fonction pour traiter le fichier
-                drive.upload(file_path)
+			# Vérifie si le chemin correspond à un fichier
+			if os.path.isfile(file_path):
+				# Appelle la fonction pour traiter le fichier
+				drive.upload(file_path)
 	except Exception as e:
-        print(f"Une erreur s'est produite : {e}")
+		print(f"Une erreur s'est produite : {e}")
 
 def shoot():
 	date_heure_actuelles = datetime.now()
