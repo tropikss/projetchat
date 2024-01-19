@@ -49,6 +49,23 @@ def delete(chemin_fichier):
     except Exception as e:
         print(f"Une erreur s'est produite lors de la suppression du fichier {chemin_fichier}: {e}")
 
+import os
+
+def deleteAll():
+    try:
+        # Liste de tous les fichiers dans le répertoire
+        fichiers = os.listdir("photo/")
+
+        # Parcourir la liste et supprimer chaque fichier
+        for fichier in fichiers:
+            chemin_fichier = os.path.join(repertoire, fichier)
+            if os.path.isfile(chemin_fichier):
+                os.remove(chemin_fichier)
+                print(f"Fichier supprimé : {fichier}")
+
+        print("Tous les fichiers ont été supprimés avec succès.")
+    except Exception as e:
+        print(f"Une erreur s'est produite : {e}")
 
 def uploadAll(directory_path):
 	try:
@@ -77,7 +94,7 @@ def compare(repertoire):
 	fichiers = [fichier for fichier in fichiers if os.path.isfile(os.path.join(repertoire, fichier))]
 
 	# Vérifier s'il y a au moins deux fichiers
-	if len(fichiers) >= 2:
+	if len(fichiers) == 2:
 		# Récupérer les deux premiers fichiers
 		p1, p2 = os.path.join(repertoire, fichiers[0]), os.path.join(repertoire, fichiers[1])
 
@@ -91,8 +108,11 @@ def compare(repertoire):
 		else :
 			print("                                     AUCUN MOUVEMENT")
 
-	else:
+	elif(len(fichiers) < 2):
 		print("Pas assez de fichier")
+	else :
+		deleteAll()
+		print("deleteAll")
 
 def shoot():
 	date_heure_actuelles = datetime.now()

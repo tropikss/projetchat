@@ -1,7 +1,7 @@
 from skimage.metrics import structural_similarity as ssim
 import cv2
 
-def mouvement(image1, image2, seuil_ssim=0.5):
+def mouvement(image1, image2, seuil_ssim=0.8):
     image1 = cv2.imread(image1)
     image2 = cv2.imread(image2)
     # Charger les images en niveaux de gris
