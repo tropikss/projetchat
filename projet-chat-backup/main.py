@@ -20,6 +20,7 @@ error = [255, 0, 0]
 picam.initPhoto(640, 480)
 led.init()
 lcd.init()
+lcd.background()
 	
 def message(type, message):
 	shift = 128
