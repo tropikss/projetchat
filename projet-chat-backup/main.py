@@ -87,12 +87,9 @@ def uploadAll(directory_path):
 	except Exception as e:
 		print(f"Une erreur s'est produite : {e}")
 
-def compare(repertoire):
+def compare(repertoire, last):
 	# Liste des fichiers dans le répertoire
-	fichiers = [(fichier, os.path.getctime(os.path.join(repertoire, fichier))) for fichier in os.listdir(repertoire) if os.path.isfile(os.path.join(repertoire, fichier))]
-
-	# Tri des fichiers par date de création
-	fichiers = sorted(fichiers, key=lambda x: x[1])
+	fichiers = os.listdir(repertoire)
 
 	# Filtrer les fichiers pour ne conserver que les fichiers (pas les répertoires)
 	fichiers = [fichier for fichier in fichiers if os.path.isfile(os.path.join(repertoire, fichier))]
@@ -109,10 +106,16 @@ def compare(repertoire):
 			
 			print("                                     MOUVEMENT")
 			upload(p2)
-			delete(p2)
+			delete(last)
+	
 		else :
 			print("                                     AUCUN MOUVEMENT")
-			delete(p2)
+			delete(last)
+
+		if(p1 != last):
+				return p1
+			else :
+				return p2
 
 	elif(len(fichiers) < 2):
 		print("Pas assez de fichier")
@@ -175,10 +178,11 @@ def moyUltrasonic():
 
 n = 10
 tab = [""] * n
+last
 
 while True: 
 	shoot()
-	compare("photo/")
+	last = compare("photo/", last)
 	time.sleep(2)
 
 
