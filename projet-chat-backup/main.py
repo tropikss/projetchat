@@ -105,10 +105,11 @@ def compare(repertoire):
 		if(openCV.mouvement(p1, p2)) :
 			
 			print("                                     MOUVEMENT")
-			delete(p1)
+			upload(p2)
+			delete(p2)
 		else :
 			print("                                     AUCUN MOUVEMENT")
-			delete(p1)
+			delete(p2)
 
 	elif(len(fichiers) < 2):
 		print("Pas assez de fichier")
