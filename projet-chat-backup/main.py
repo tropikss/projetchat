@@ -107,15 +107,15 @@ def compare(repertoire, last):
 			print("                                     MOUVEMENT")
 			upload(p2)
 			delete(last)
-	
+
 		else :
 			print("                                     AUCUN MOUVEMENT")
 			delete(last)
 
 		if(p1 != last):
-				return p1
-			else :
-				return p2
+			return p1
+		else :
+			return p2
 
 	elif(len(fichiers) < 2):
 		print("Pas assez de fichier")
