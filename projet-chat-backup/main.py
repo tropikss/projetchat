@@ -103,7 +103,7 @@ def compare(repertoire):
 		print("p2 : "+str(p2))
 
 		global last
-		if(last == None):
+		if(last is None):
 			last = p1
 
 		if(openCV.mouvement(p1, p2)) :
