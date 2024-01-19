@@ -82,6 +82,8 @@ def compare(repertoire):
 		p1, p2 = os.path.join(repertoire, fichiers[0]), os.path.join(repertoire, fichiers[1])
 
 		if(openCV.mouvement(p1, p2)) :
+			print("p1 : "+str(p1))
+			print("p2 : "+str(p2))
 			print("MOUVEMENT")
 			delete(p1)
 
