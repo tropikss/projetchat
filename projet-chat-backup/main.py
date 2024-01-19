@@ -125,7 +125,12 @@ def moyUltrasonic():
 n = 10
 tab = [""] * n
 
-while True: 
+shoot_upload()
+shoot_upload()
+shoot_upload()
+shoot_upload()
+
+"""while True: 
 
 	global u
 
@@ -139,7 +144,7 @@ while True:
 		else:
 			print("rien")
 	i += 1
-	time.sleep(1)
+	time.sleep(1)"""
 
 
 """for i in range(10):
