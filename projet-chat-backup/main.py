@@ -18,9 +18,16 @@ process = [255, 255, 0]
 done = [0, 255, 0]
 error = [255, 0, 0]
 
+# --------------------------------- INITIALISATION ----------------------------------
 
-picam.initPhoto(640, 480)
-led.init()
+#picam.initPhoto(640, 480)			# camera
+
+led.init()							# led 1 et 2
+
+lcd.init()							# ecran lcd
+lcd.background()
+
+# ----------------------------------- LIBRAIRIE ---------------------------------------
 	
 def message(type, message):
 	shift = 128
@@ -183,54 +190,27 @@ def moyUltrasonic():
 	print(str(ultrasonicTab)+" - "+str(moy(ultrasonicTab))+" - "+str(ultrasonic.getValue()))
 	return moy(ultrasonicTab)
 
-n = 10
-tab = [""] * n
+# ----------------------------------- DEBUT CODE -------------------------------------------------
 
 while True: 
+	led.led1on()
+	led.led2off()
+	message(error, "error")
+
+	time.sleep(0.5)
+
+	led.led1off()
+	led.led2on()
+	message(wait, "wait")
+
+	time.sleep(0.5)
+
+
+
+
+	"""
 	shoot()
 	compare("photo/")
 	time.sleep(2)
+	"""
 
-
-"""for i in range(10):
-	shoot()
-uploadAll("photo/")"""
-
-"""lcd.background()
-displayed = False
-distance = 100
-
-delay = 0.1
-times = 1
-n = times/delay
-res = 0
-last = 0
-i = 0
-
-while True:
-	v = ultrasonic.getValue()
-	print("v:"+str(v))
-	close = v < distance
-	 
-	if(close):
-		message(error, "stop")
-	else :
-		message(wait, "Attente...")
-	
-
-	v = v/n
-	res += v
-	res -= last
-	last = v
-	print("res: "+str(res))
-	i += 1
-
-	if(i >= times/delay):
-		if(v < distance):
-			print("someone close")
-			led.on()
-			shoot_upload()
-	
-	# delai pour pas tout cramer
-	time.sleep(0.1)
-"""
