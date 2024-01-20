@@ -193,18 +193,23 @@ def moyUltrasonic():
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 
 while True: 
+	
+	date_heure_actuelles = datetime.now()
+	nom = date_heure_actuelles.strftime("%H:%M:%S")
+
+	h = date_heure_actuelles.strftime("%H")
+	m = date_heure_actuelles.strftime("%M")
+	s = date_heure_actuelles.strftime("%S")
+
 	led.led1on()
-	lcd.setRGB(255, 0, 255)
+	lcd.setRGB(0, 0, 100)
+	lcd.setText(nom)
 
 	time.sleep(0.5)
 
 	led.led1off()
-	lcd.setRGB(255, 0, 0)
 
 	time.sleep(0.5)
-
-
-
 
 	"""
 	shoot()
