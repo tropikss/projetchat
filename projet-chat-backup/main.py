@@ -13,10 +13,10 @@ import os
 
 from datetime import datetime
 
-wait = (0, 0, 255)
-process = (255, 255, 0) 
-done = (0, 255, 0)
-error = (255, 0, 0)
+wait = [0, 0, 255]
+process = [255, 255, 0]
+done = [0, 255, 0]
+error = [255, 0, 0]
 
 # --------------------------------- INITIALISATION ----------------------------------
 
@@ -32,10 +32,11 @@ led.init()							# led 1 et 2
 def message(type, message):
 	shift = 128
 
-	for i in range(len(type)):
-		type[i] = type[i]-shift
+	r = type[0]-shift
+	g = type[1]-shift
+	b = type[2]-shift
 
-	lcd.setRGB(type)
+	lcd.setRGB(r,g,b)
 	lcd.setText(message)
 
 def delete(chemin_fichier):
