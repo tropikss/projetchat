@@ -5,7 +5,7 @@ import openCV
 
 import driver_ultrasonic as ultrasonic
 import driver_led as led
-import driver_ecran as lcd
+import grove_rgb_lcd as lcd
 import driver_button
 import driver_camera as picam
 import drive 
