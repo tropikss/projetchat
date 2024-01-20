@@ -21,8 +21,6 @@ error = [255, 0, 0]
 
 picam.initPhoto(640, 480)
 led.init()
-lcd.init()
-lcd.background()
 	
 def message(type, message):
 	shift = 128
@@ -48,8 +46,6 @@ def delete(chemin_fichier):
             print(f"Le fichier {chemin_fichier} n'existe pas.")
     except Exception as e:
         print(f"Une erreur s'est produite lors de la suppression du fichier {chemin_fichier}: {e}")
-
-import os
 
 def deleteAll():
 	repertoire = "photo/"
