@@ -35,7 +35,6 @@ def message(type, message):
 	for i in range(len(type)):
 		type[i] = type[i]-shift
 
-	lcd.clear()
 	lcd.setRGB(type)
 	lcd.setText(message)
 
