@@ -24,8 +24,8 @@ error = [255, 0, 0]
 
 led.init()							# led 1 et 2
 
-lcd.init()							# ecran lcd
-lcd.background()
+#lcd.init()							# ecran lcd
+#lcd.background()
 
 # ----------------------------------- LIBRAIRIE ---------------------------------------
 	
