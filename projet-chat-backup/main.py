@@ -13,10 +13,10 @@ import os
 
 from datetime import datetime
 
-wait = [0, 0, 255]
-process = [255, 255, 0]
-done = [0, 255, 0]
-error = [255, 0, 0]
+wait = (0, 0, 255)
+process = (255, 255, 0) 
+done = (0, 255, 0)
+error = (255, 0, 0)
 
 # --------------------------------- INITIALISATION ----------------------------------
 
