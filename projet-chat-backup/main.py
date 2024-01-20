@@ -194,14 +194,12 @@ def moyUltrasonic():
 
 while True: 
 	led.led1on()
-	led.led2off()
-	message(error, "error")
+	lcd.setRGB(255, 0, 255)
 
 	time.sleep(0.5)
 
 	led.led1off()
-	led.led2on()
-	message(wait, "wait")
+	lcd.setRGB(255, 0, 0)
 
 	time.sleep(0.5)
 
