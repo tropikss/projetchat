@@ -192,7 +192,13 @@ def moyUltrasonic():
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 
-while True: 
+# Utilisation de la fonction detect_face
+if openCV.detect_face():
+    print("Visage détecté !")
+else:
+    print("Aucun visage détecté.")
+
+"""while True: 
 	
 	date_heure_actuelles = datetime.now()
 	nom = date_heure_actuelles.strftime("%H:%M:%S")
@@ -209,7 +215,7 @@ while True:
 
 	led.led1off()
 
-	time.sleep(0.5)
+	time.sleep(0.5)"""
 
 	"""
 	shoot()
