@@ -215,9 +215,8 @@ else:
 
 	led.led1off()
 
-	time.sleep(0.5)"""
+	time.sleep(0.5)
 
-	"""
 	shoot()
 	compare("photo/")
 	time.sleep(2)
