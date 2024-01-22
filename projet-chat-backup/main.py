@@ -225,12 +225,12 @@ while friandise:
 		motor.forward(time)
 		message(done, nom+"-chat")
 		move(path, "upload/")
-		motor.stop()
 	else : 
 		led.off()
 		message(done, nom)
 		i += 1
 		delete(path)
+	motor.stop()
 
 	print(i)
 	if(i > 3) : 
