@@ -142,7 +142,7 @@ def shoot():
 	nom = date_heure_actuelles.strftime("%H:%M:%S")
 
 	picam.shoot(nom)
-	time.sleep(1)
+	time.sleep(0.7)
 
 	return(nom)
 
