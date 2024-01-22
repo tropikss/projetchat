@@ -48,4 +48,4 @@ def test(repertoire):
         print(str(fichier)+" : "+str(visage(chemin_fichier)))
 
 # Utilisation de la fonction detect_face_in_image
-test("phototest")
+#test("phototest")
