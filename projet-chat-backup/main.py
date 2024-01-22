@@ -194,7 +194,7 @@ def move(chemin_source, chemin_destination):
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 friandise = True
-time = 4
+temps = 4
 
 while friandise:
 
@@ -222,7 +222,7 @@ while friandise:
 	if(openCV.chat(path)):
 		i = 0
 		led.on()
-		motor.forward(time)
+		motor.forward(temps)
 		message(done, nom+"-chat")
 		move(path, "upload/")
 	else : 
