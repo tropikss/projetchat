@@ -197,7 +197,7 @@ i = 0
 while True: 
 	motor.forward()
 	motor.stop()
-	moto.back()
+	motor.back()
 	motor.stop()
 	time.sleep(0.5)
 
