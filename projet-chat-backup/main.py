@@ -146,20 +146,6 @@ def shoot():
 
 	return(nom)
 
-def shoot_upload():
-
-	date_heure_actuelles = datetime.now()
-	nom = date_heure_actuelles.strftime("%H:%M:%S")
-
-	message(error, "Ne bougez plus !")
-	picam.shoot(nom)
-
-	message(process, "Upload en cours")
-	time.sleep(2)
-	drive.upload(nom)
-
-	message(done, "Upload termine")
-
 distance = 100
 n = 10
 
@@ -207,7 +193,7 @@ while True:
 	# Enregistrez le temps avant d'appeler shoot()
 	temps_debut = time.time()
 	
-	path = "photo/"+shoot()
+	path = "photo/" + shoot() + ".jpeg"
 
 	# Enregistrez le temps après l'appel à shoot()
 	temps_fin = time.time()
