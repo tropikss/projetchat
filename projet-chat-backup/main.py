@@ -193,26 +193,26 @@ def moyUltrasonic():
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 
 while True:
-    date_heure_debut = datetime.now()
-    nom = date_heure_debut.strftime("%H:%M:%S")
+	date_heure_debut = datetime.now()
+	nom = date_heure_debut.strftime("%H:%M:%S")
 
-    h = date_heure_debut.strftime("%H")
-    m = date_heure_debut.strftime("%M")
-    s = date_heure_debut.strftime("%S")
+	h = date_heure_debut.strftime("%H")
+	m = date_heure_debut.strftime("%M")
+	s = date_heure_debut.strftime("%S")
 
-    message(done, nom)
+	message(done, nom)
 
-    print("shoot start")
+	print("shoot start")
 
-    # Enregistrez le temps avant d'appeler shoot()
-    temps_debut = time.time()
-    
-    path = "photo/"+shoot()
+	# Enregistrez le temps avant d'appeler shoot()
+	temps_debut = time.time()
+	
+	path = "photo/"+shoot()
 
 	# Enregistrez le temps après l'appel à shoot()
-    temps_fin = time.time()
-    temps_ecoule = temps_fin - temps_debut
-    print(f"shoot end - Temps écoulé: {temps_ecoule:.2f} secondes")
+	temps_fin = time.time()
+	temps_ecoule = temps_fin - temps_debut
+	print(f"shoot end - Temps écoulé: {temps_ecoule:.2f} secondes")
 
 	if(openCV.visage(path)):
 		led.on()
@@ -222,7 +222,7 @@ while True:
 	delete(path)
 	
 
-    time.sleep(0.5)
+	time.sleep(0.5)
 
 """while True: 
 	
