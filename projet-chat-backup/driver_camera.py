@@ -13,5 +13,5 @@ def initPhoto(w, h):
     print("init picam")
 
 def shoot(nom):
-    picam.capture_file("photo/"+nom+".jpg")
+    picam.capture_file("photo/"+nom+".jpg", quality = 50)
 
