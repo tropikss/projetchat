@@ -178,6 +178,9 @@ def move(chemin_source, chemin_destination):
 global i
 
 while True:
+	
+	global i
+
 	date_heure_debut = datetime.now()
 	nom = date_heure_debut.strftime("%H:%M:%S")
 
@@ -209,7 +212,8 @@ while True:
 		led.off()
 		i += 1
 		delete(path)
-	
+
+	print(i)
 	if(i > 5) : 
 		uploadAll("upload/")
 		deleteAll("upload/")
