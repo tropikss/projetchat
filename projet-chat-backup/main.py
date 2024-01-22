@@ -56,7 +56,24 @@ def delete(chemin_fichier):
     except Exception as e:
         print(f"Une erreur s'est produite lors de la suppression du fichier {chemin_fichier}: {e}")
 
-def deleteAll():
+def deleteAllUpload():
+	repertoire = "upload/"
+	try:
+		# Liste de tous les fichiers dans le répertoire
+		fichiers = os.listdir(repertoire)
+
+		# Parcourir la liste et supprimer chaque fichier
+		for fichier in fichiers:
+			chemin_fichier = os.path.join(repertoire, fichier)
+			if os.path.isfile(chemin_fichier):
+				os.remove(chemin_fichier)
+				print(f"Fichier supprimé : {fichier}")
+
+		print("Tous les fichiers ont été supprimés avec succès.")
+	except Exception as e:
+		print(f"Une erreur s'est produite : {e}")
+
+def deleteAllPhoto():
 	repertoire = "photo/"
 	try:
 		# Liste de tous les fichiers dans le répertoire
@@ -212,7 +229,7 @@ while True:
 	print(i)
 	if(i > 5) : 
 		uploadAll("upload/")
-		deleteAll("upload/")
+		deleteAllUpload()
 
 	time.sleep(0.5)
 
