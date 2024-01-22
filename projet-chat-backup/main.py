@@ -195,6 +195,7 @@ def move(chemin_source, chemin_destination):
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 friandise = True
 temps = 4
+i = 0
 
 while friandise:
 
