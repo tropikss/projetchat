@@ -201,8 +201,6 @@ while True:
 	m = date_heure_debut.strftime("%M")
 	s = date_heure_debut.strftime("%S")
 
-	message(done, nom)
-
 	print("shoot start")
 
 	# Enregistrez le temps avant d'appeler shoot()
@@ -220,14 +218,18 @@ while True:
 	if(openCV.chat(path)):
 		i = 0
 		led.on()
+		message(done, nom+"    chat !")
 		move(path, "upload/")
 	else : 
 		led.off()
+		message(done, nom)
 		i += 1
 		delete(path)
 
 	print(i)
-	if(i > 5) : 
+	if(i > 3) : 
+		i = 0
+		message(done, nom+"    upload")
 		uploadAll("upload/")
 		deleteAllUpload()
 
