@@ -203,7 +203,7 @@ while True:
 	message(done,nom)
 
 	print("shoot start")
-	shoot("test")
+	shoot()
 	print("shoot end")
 
 	time.sleep(0.5)
