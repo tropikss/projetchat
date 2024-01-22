@@ -218,7 +218,7 @@ while True:
 	if(openCV.chat(path)):
 		i = 0
 		led.on()
-		message(done, nom+"    chat !")
+		message(done, nom+"-chat")
 		move(path, "upload/")
 	else : 
 		led.off()
@@ -229,7 +229,7 @@ while True:
 	print(i)
 	if(i > 3) : 
 		i = 0
-		message(done, nom+"    upload")
+		message(done, nom+"-upload")
 		uploadAll("upload/")
 		deleteAllUpload()
 
