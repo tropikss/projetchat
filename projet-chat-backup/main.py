@@ -203,6 +203,7 @@ while True:
     message(done, nom)
 
     print("shoot start")
+	
     # Enregistrez le temps avant d'appeler shoot()
     temps_debut = time.time()
     

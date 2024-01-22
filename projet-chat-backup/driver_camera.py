@@ -9,7 +9,7 @@ picam = Picamera2()
 def initPhoto(w, h):
     conf = picam.create_still_configuration(main={"size": (w, h)})
     picam.configure(conf)
-    picam.options['quality'] = 50
+    picam.options['quality'] = 100
     picam.start()
     print("init picam")
 
