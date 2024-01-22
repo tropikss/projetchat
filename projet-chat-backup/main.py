@@ -11,6 +11,7 @@ import driver_camera as picam
 import driver_motor as motor
 import drive 
 import os
+import driver_joystick as js
 
 import shutil
 
@@ -192,16 +193,10 @@ def move(chemin_source, chemin_destination):
         return False
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
-i = 0
+friandise = True
+time = 4
 
-while True: 
-	motor.forward()
-	motor.stop()
-	motor.back()
-	motor.stop()
-	time.sleep(0.5)
-
-while False:
+while friandise:
 
 	date_heure_debut = datetime.now()
 	nom = date_heure_debut.strftime("%H:%M:%S")
@@ -227,8 +222,10 @@ while False:
 	if(openCV.chat(path)):
 		i = 0
 		led.on()
+		motor.forward(time)
 		message(done, nom+"-chat")
 		move(path, "upload/")
+		motor.stop()
 	else : 
 		led.off()
 		message(done, nom)
