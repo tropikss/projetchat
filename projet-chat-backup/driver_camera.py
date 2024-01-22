@@ -14,5 +14,4 @@ def initPhoto(w, h):
 
 def shoot(nom):
     picam.capture_file("photo/"+nom+".jpg")
-    print("shoot")
 
