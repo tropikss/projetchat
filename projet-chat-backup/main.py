@@ -175,7 +175,7 @@ def move(chemin_source, chemin_destination):
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 
-i = 0
+global i = 0
 
 while True:
 	date_heure_debut = datetime.now()
@@ -200,8 +200,6 @@ while True:
 	print(f"shoot end - Temps écoulé: {temps_ecoule:.2f} secondes")
 
 	time.sleep(0.5)
-
-	global i 
 
 	if(openCV.chat(path)):
 		i = 0
