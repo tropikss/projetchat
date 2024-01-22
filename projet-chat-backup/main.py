@@ -192,11 +192,21 @@ def moyUltrasonic():
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 
-# Utilisation de la fonction detect_face
-if openCV.detect_face():
-    print("Visage détecté !")
-else:
-    print("Aucun visage détecté.")
+while True:
+	date_heure_actuelles = datetime.now()
+	nom = date_heure_actuelles.strftime("%H:%M:%S")
+
+	h = date_heure_actuelles.strftime("%H")
+	m = date_heure_actuelles.strftime("%M")
+	s = date_heure_actuelles.strftime("%S")
+
+	message(done,nom)
+
+	print("shoot start")
+	shoot()
+	print("shoot end")
+
+	time.sleep(0.5)
 
 """while True: 
 	
