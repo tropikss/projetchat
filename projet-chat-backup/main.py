@@ -20,7 +20,7 @@ error = [255, 0, 0]
 
 # --------------------------------- INITIALISATION ----------------------------------
 
-#picam.initPhoto(640, 480)			# camera
+picam.initPhoto(640, 480)			# camera
 
 led.init()							# led 1 et 2
 
