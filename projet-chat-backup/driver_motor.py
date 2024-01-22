@@ -1,6 +1,7 @@
 
 import grove_i2c_motor_driver
 m = grove_i2c_motor_driver.motor_driver(address = 0x0f)
+import time
 
 def forward():
 	print("Forward")
