@@ -174,12 +174,8 @@ def move(chemin_source, chemin_destination):
         return False
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
-
-global i
-
+i = 0
 while True:
-	
-	global i
 
 	date_heure_debut = datetime.now()
 	nom = date_heure_debut.strftime("%H:%M:%S")
@@ -205,12 +201,10 @@ while True:
 	time.sleep(0.5)
 
 	if(openCV.chat(path)):
-		global i
 		i = 0
 		led.on()
 		move(path, "upload/")
 	else : 
-		global i
 		led.off()
 		i += 1
 		delete(path)
