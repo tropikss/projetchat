@@ -20,7 +20,7 @@ error = [255, 0, 0]
 
 # --------------------------------- INITIALISATION ----------------------------------
 
-picam.initPhoto(640, 480)			# camera
+picam.initPhoto(1080, 720)			# camera
 
 led.init()							# led 1 et 2
 
@@ -203,7 +203,7 @@ while True:
     message(done, nom)
 
     print("shoot start")
-	
+
     # Enregistrez le temps avant d'appeler shoot()
     temps_debut = time.time()
     
