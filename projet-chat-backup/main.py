@@ -215,8 +215,10 @@ while True:
     print(f"shoot end - Temps écoulé: {temps_ecoule:.2f} secondes")
 
 	if(openCV.visage(path)):
+		led.on()
 		drive.upload(path)
 
+	led.off()
 	delete(path)
 	
 
