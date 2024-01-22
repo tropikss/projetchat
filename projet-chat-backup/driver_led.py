@@ -7,8 +7,8 @@ LED_PIN = 7
 def init():
     grovepi.pinMode(LED_PIN, "OUTPUT")
 
-def ledon():
+def on():
     grovepi.digitalWrite(LED_PIN, 1)
     
-def ledoff():
+def off():
     grovepi.digitalWrite(LED_PIN, 0)
