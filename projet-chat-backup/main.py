@@ -214,7 +214,9 @@ while True:
 	temps_ecoule = temps_fin - temps_debut
 	print(f"shoot end - Temps écoulé: {temps_ecoule:.2f} secondes")
 
-	if(openCV.visage(path)):
+	time.sleep(0.5)
+
+	if(openCV.chat(path)):
 		led.on()
 		drive.upload(path)
 

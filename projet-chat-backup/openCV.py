@@ -17,7 +17,12 @@ def mouvement(image1, image2, seuil_ssim=0.8):
 
     return changement_majeur
 
-def visage(image_path):
+def chat(image_path):
+    # Vérifier si le fichier existe
+    if not os.path.isfile(image_path):
+        print(f"Le fichier {image_path} n'existe pas.")
+        return False
+
     # Charger la cascade de Haar pour les visages
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalcatface_extended.xml')
 
@@ -31,7 +36,7 @@ def visage(image_path):
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.05, minNeighbors=3, minSize=(30, 30))
 
     # Si un visage est détecté, renvoyer True
-    return (len(faces) > 0)
+    return len(faces) > 0
 
 def test(repertoire):
     # Vérifier si le chemin fourni est un répertoire
