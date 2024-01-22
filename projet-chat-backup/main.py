@@ -8,6 +8,7 @@ import driver_led as led
 import grove_rgb_lcd as lcd
 import driver_button
 import driver_camera as picam
+import driver_motor as motor
 import drive 
 import os
 
@@ -84,9 +85,9 @@ def deleteAllPhoto():
 			chemin_fichier = os.path.join(repertoire, fichier)
 			if os.path.isfile(chemin_fichier):
 				os.remove(chemin_fichier)
-				print(f"Fichier supprimé : {fichier}")
+				print(f"Fichier supprime : {fichier}")
 
-		print("Tous les fichiers ont été supprimés avec succès.")
+		print("Tous les fichiers ont été supprimes avec succes.")
 	except Exception as e:
 		print(f"Une erreur s'est produite : {e}")
 
@@ -192,7 +193,15 @@ def move(chemin_source, chemin_destination):
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 i = 0
-while True:
+
+while True: 
+	motor.forward()
+	motor.stop()
+	moto.back()
+	motor.stop()
+	time.sleep(0.5)
+
+while False:
 
 	date_heure_debut = datetime.now()
 	nom = date_heure_debut.strftime("%H:%M:%S")
@@ -211,7 +220,7 @@ while True:
 	# Enregistrez le temps après l'appel à shoot()
 	temps_fin = time.time()
 	temps_ecoule = temps_fin - temps_debut
-	print(f"shoot end - Temps écoulé: {temps_ecoule:.2f} secondes")
+	print(f"shoot end - Temps ecoule: {temps_ecoule:.2f} secondes")
 
 	time.sleep(0.5)
 
@@ -234,28 +243,3 @@ while True:
 		deleteAllUpload()
 
 	time.sleep(0.5)
-
-"""while True: 
-	
-	date_heure_actuelles = datetime.now()
-	nom = date_heure_actuelles.strftime("%H:%M:%S")
-
-	h = date_heure_actuelles.strftime("%H")
-	m = date_heure_actuelles.strftime("%M")
-	s = date_heure_actuelles.strftime("%S")
-
-	led.led1on()
-	lcd.setRGB(0, 0, 100)
-	lcd.setText(nom)
-
-	time.sleep(0.5)
-
-	led.led1off()
-
-	time.sleep(0.5)
-
-	shoot()
-	compare("photo/")
-	time.sleep(2)
-	"""
-
