@@ -207,12 +207,18 @@ while True:
     # Enregistrez le temps avant d'appeler shoot()
     temps_debut = time.time()
     
-    shoot()
-    
-    # Enregistrez le temps après l'appel à shoot()
+    path = "photo/"+shoot()
+
+	# Enregistrez le temps après l'appel à shoot()
     temps_fin = time.time()
     temps_ecoule = temps_fin - temps_debut
     print(f"shoot end - Temps écoulé: {temps_ecoule:.2f} secondes")
+
+	if(openCV.visage(path)):
+		drive.upload(path)
+
+	delete(path)
+	
 
     time.sleep(0.5)
 
