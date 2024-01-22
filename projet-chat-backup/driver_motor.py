@@ -1,10 +1,10 @@
 
-
+import grove_i2c_motor_driver
 m = grove_i2c_motor_driver.motor_driver(address = 0x0f)
 
 def forward():
 	print("Forward")
-	m.MotorSpeedSetAB(100,100)	#defines the speed of motor 1 and motor 2;
+	m.MotorSpeedSetAB(100,100)	#defines the speed of motor 1 and motor 2
 	m.MotorDirectionSet(0b1010)	#"0b1010" defines the output polarity, "10" means the M+ is "positive" while the M- is "negtive"
 	time.sleep(2)
 
