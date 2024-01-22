@@ -11,7 +11,7 @@ import driver_camera as picam
 import driver_motor as motor
 import drive 
 import os
-import driver_joystick as js
+
 
 import shutil
 
