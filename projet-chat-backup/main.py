@@ -11,6 +11,8 @@ import driver_camera as picam
 import drive 
 import os
 
+import shutil
+
 from datetime import datetime
 
 wait = [0, 0, 255]
@@ -146,37 +148,34 @@ def shoot():
 
 	return(nom)
 
-distance = 100
-n = 10
+def move(chemin_source, chemin_destination):
+    try:
+        # Vérifier si le fichier source existe
+        if not os.path.isfile(chemin_source):
+            print(f"Le fichier {chemin_source} n'existe pas.")
+            return False
 
-ultrasonicTab = [distance] * n
+        # Vérifier si le répertoire de destination existe, sinon le créer
+        if not os.path.exists(chemin_destination):
+            os.makedirs(chemin_destination)
 
-i = 0
+        # Construire le chemin de destination en utilisant le nom du fichier source
+        nom_fichier = os.path.basename(chemin_source)
+        chemin_destination_final = os.path.join(chemin_destination, nom_fichier)
 
-def moy(tab):
-	res = 0
-	for i in range(len(tab)-1):
-		res += tab[i]
-	return int(res/(len(tab)-1))
+        # Déplacer le fichier
+        shutil.move(chemin_source, chemin_destination_final)
 
-def moyUltrasonic():
+        print(f"Le fichier {nom_fichier} a été déplacé vers {chemin_destination_final}")
+        return True
 
-	global i
-
-	u = ultrasonic.getValue()
-
-	if(i >= 10):
-		i = 0
-		u += 1
-
-	ultrasonicTab[i] = u
-
-	i += 1
-
-	print(str(ultrasonicTab)+" - "+str(moy(ultrasonicTab))+" - "+str(ultrasonic.getValue()))
-	return moy(ultrasonicTab)
+    except Exception as e:
+        print(f"Erreur lors du déplacement du fichier : {str(e)}")
+        return False
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
+
+i = 0
 
 while True:
 	date_heure_debut = datetime.now()
@@ -202,13 +201,20 @@ while True:
 
 	time.sleep(0.5)
 
-	if(openCV.chat(path)):
-		led.on()
-		drive.upload(path)
+	global i 
 
-	led.off()
-	delete(path)
+	if(openCV.chat(path)):
+		i = 0
+		led.on()
+		move(path, "upload/")
+	else : 
+		led.off()
+		i += 1
+		delete(path)
 	
+	if(i > 5) : 
+		uploadAll("upload/")
+		deleteAll("upload/")
 
 	time.sleep(0.5)
 

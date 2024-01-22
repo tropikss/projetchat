@@ -52,5 +52,7 @@ def test(repertoire):
         chemin_fichier = os.path.join(repertoire, fichier)
         print(str(fichier)+" : "+str(visage(chemin_fichier)))
 
+move("phototest/chat.jpeg", "photo/")
+
 # Utilisation de la fonction detect_face_in_image
 #test("phototest")
