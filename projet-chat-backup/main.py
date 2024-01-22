@@ -175,7 +175,7 @@ def move(chemin_source, chemin_destination):
 
 # ----------------------------------- DEBUT CODE -------------------------------------------------
 
-global i = 0
+global i
 
 while True:
 	date_heure_debut = datetime.now()
