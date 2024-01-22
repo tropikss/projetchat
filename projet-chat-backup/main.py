@@ -205,10 +205,12 @@ while True:
 	time.sleep(0.5)
 
 	if(openCV.chat(path)):
+		global i
 		i = 0
 		led.on()
 		move(path, "upload/")
 	else : 
+		global i
 		led.off()
 		i += 1
 		delete(path)
